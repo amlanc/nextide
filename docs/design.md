@@ -1,6 +1,11 @@
 # NextIDE: A Neurosymbolic AI-Powered Development Environment
+Created with help from [claude.ai](https://www.claude.ai)
+
+# Architecture
+[![Project Architecture](images/arch.png)](images/arch.png)
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [System Architecture](#system-architecture)
 3. [Core Components](#core-components)
@@ -16,6 +21,7 @@
 NextIDE is an innovative AI-powered development environment that combines the power of Large Language Models (LLMs) with symbolic AI to create a robust, reliable coding assistant. The system integrates various clients (VS Code extension, web IDE, CLI) and provides intelligent code generation with guaranteed adherence to software engineering principles through symbolic verification.
 
 The key innovations include:
+
 - Integration of symbolic AI governors for code verification
 - Neurosymbolic architecture combining LLMs with formal methods
 - Guaranteed adherence to software engineering principles
@@ -26,16 +32,17 @@ The key innovations include:
 ### Core Components
 
 #### 1.1 Symbolic Engine (Python)
+
 ```python
 core/
   ├── symbolic/
   │   ├── governors/
-  │   │   ├── architecture_governor.py    # ASP-based architecture verification
+  │   │   ├── architecture_governor.py   # ASP-based architecture verification
   │   │   ├── type_checker.py            # Z3-based type checking
   │   │   ├── best_practices.py          # Prolog-based code quality checks
   │   │   └── security_checker.py        # CLIPS/JESS security pattern verification
   │   ├── rules/
-  │   │   ├── asp_rules/                 # Architecture rules in ASP
+  │   │   ├── asp_rules/                # Architecture rules in ASP
   │   │   ├── prolog_rules/             # Best practices in Prolog
   │   │   ├── clips_rules/              # Security patterns in CLIPS
   │   │   └── z3_constraints/           # Type constraints in Z3
@@ -43,6 +50,7 @@ core/
 ```
 
 #### 1.2 LLM Integration Layer (Python)
+
 ```python
 core/
   ├── llm/
@@ -52,6 +60,7 @@ core/
 ```
 
 #### 1.3 Orchestration Layer (Python)
+
 ```python
 core/
   ├── orchestrator/
@@ -87,11 +96,12 @@ api/
   └── main.py                           # API entry point
 ```
 
-## Implementation Details
+## Implementation Plan
 
 ### 1. Symbolic Engine
 
 #### Architecture Governor (ASP)
+
 ```prolog
 % Example ASP rule for 3-tier architecture verification
 invalid_architecture :-
@@ -101,6 +111,7 @@ invalid_architecture :-
 ```
 
 #### Type Checker (Z3)
+
 ```python
 def verify_typescript_types(ast):
     solver = z3.Solver()
@@ -111,7 +122,7 @@ def verify_typescript_types(ast):
     return solver.check()
 ```
 
-### 2. LLM Integration
+### 2. LLM (Claude?) Integration
 
 ```python
 class ClaudeClient:
@@ -125,7 +136,7 @@ class ClaudeClient:
         return self.parse_response(response)
 ```
 
-### 3. Orchestration Pipeline
+### 3. Interaction Orchestration Pipeline
 
 ```python
 class CodeGenerationPipeline:
@@ -156,11 +167,13 @@ class CodeGenerationPipeline:
 ## Performance Optimization
 
 1. **Caching Layer**
+
    - Cache symbolic reasoning results
    - Store frequently used code patterns
    - Cache LLM responses for similar prompts
 
 2. **Parallel Processing**
+
    - Run symbolic governors in parallel
    - Distribute workload across engine cluster
    - Async code generation and verification
@@ -173,11 +186,13 @@ class CodeGenerationPipeline:
 ## Security Considerations
 
 1. **Authentication & Authorization**
+
    - JWT-based authentication
    - Role-based access control
    - API key management
 
 2. **Code Safety**
+
    - Sandboxed code execution
    - Input validation and sanitization
    - Rate limiting and abuse prevention
@@ -190,21 +205,25 @@ class CodeGenerationPipeline:
 ## Implementation Timeline
 
 ### Phase 1 (Weeks 1-4)
+
 - Set up basic project structure
 - Implement core symbolic engine components
 - Basic LLM integration
 
 ### Phase 2 (Weeks 5-8)
+
 - Develop orchestration layer
 - Create basic frontend
 - Implement API endpoints
 
 ### Phase 3 (Weeks 9-12)
+
 - Add advanced features
 - Performance optimization
 - Security hardening
 
 ### Phase 4 (Weeks 13-16)
+
 - Testing and bug fixes
 - Documentation
 - Deployment preparation
